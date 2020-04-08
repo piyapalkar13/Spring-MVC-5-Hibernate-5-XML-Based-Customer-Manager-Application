@@ -7,19 +7,21 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "customer")
+@Table(name = "cust")
 public class Customer {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	
-	private String fname;
-	
-	private String lname;
+	private String name;
 	
 	private String email;
 
+	private String address;
+	
+	private String phone;
+	
 	public Customer() {
 		super();
 		// TODO Auto-generated constructor stub
@@ -33,20 +35,12 @@ public class Customer {
 		this.id = id;
 	}
 
-	public String getFname() {
-		return fname;
+	public String getName() {
+		return name;
 	}
 
-	public void setFname(String fname) {
-		this.fname = fname;
-	}
-
-	public String getLname() {
-		return lname;
-	}
-
-	public void setLname(String lname) {
-		this.lname = lname;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public String getEmail() {
@@ -57,11 +51,27 @@ public class Customer {
 		this.email = email;
 	}
 
+	public String getAddress() {
+		return address;
+	}
+
+	public void setAddress(String address) {
+		this.address = address;
+	}
+
+	public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
 	@Override
 	public String toString() {
-		return "Customer [id=" + id + ", fname=" + fname + ", lname=" + lname + ", email=" + email + "]";
+		return "Customer [id=" + id + ", name=" + name + ", email=" + email + ", address=" + address + ", phone="
+				+ phone + "]";
 	}
-	
-	
+
 	
 }

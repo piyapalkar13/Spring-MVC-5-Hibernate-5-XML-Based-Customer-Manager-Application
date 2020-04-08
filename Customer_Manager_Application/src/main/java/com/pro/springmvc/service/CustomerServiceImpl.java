@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import com.pro.springmvc.dao.CustomerDAO;
 import com.pro.springmvc.model.Customer;
 
-@Service
+@Service("CustomerService")
 @Transactional
 public class CustomerServiceImpl implements CustomerService {
 

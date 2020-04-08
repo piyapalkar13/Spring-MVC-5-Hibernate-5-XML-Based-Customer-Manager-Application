@@ -27,8 +27,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 
 		Session session = sf.getCurrentSession();
 		String hql = "from Customer";
-		Query q = session.createQuery(hql);
-		List<Customer> clist = q.list();
+		List<Customer> clist = session.createQuery("from Customer").list();
 
 		for (Customer c : clist) {
 			logger.info("Customer List :" + c);
