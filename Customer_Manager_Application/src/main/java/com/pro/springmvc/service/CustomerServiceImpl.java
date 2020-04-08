@@ -4,18 +4,23 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.pro.springmvc.dao.CustomerDAO;
 import com.pro.springmvc.model.Customer;
 
 @Service
 @Transactional
 public class CustomerServiceImpl implements CustomerService {
 
+	@Autowired
+	private CustomerDAO dao;
+	
 	@Override
 	public List<Customer> getCustomers() {
-		// TODO Auto-generated method stub
-		return null;
+	
+		return dao.getCustomers();
 	}
 
 	@Override
